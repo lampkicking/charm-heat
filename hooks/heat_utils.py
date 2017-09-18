@@ -103,6 +103,7 @@ CONFIG_FILES = OrderedDict([
                      context.SharedDBContext(relation_prefix='heat',
                                              ssl_dir=HEAT_DIR),
                      context.OSConfigFlagContext(),
+                     context.InternalEndpointContext(),
                      HeatIdentityServiceContext(service=SVC, service_user=SVC),
                      HeatHAProxyContext(),
                      HeatSecurityContext(),
@@ -198,8 +199,7 @@ def do_openstack_upgrade(configs):
     ]
     apt_update()
     apt_upgrade(options=dpkg_opts, fatal=True, dist=True)
-    packages = BASE_PACKAGES + BASE_SERVICES
-    apt_install(packages=packages, options=dpkg_opts, fatal=True)
+    apt_install(packages=determine_packages(), options=dpkg_opts, fatal=True)
 
     # set CONFIGS to load templates from new release and regenerate config
     configs.set_release(openstack_release=new_os_rel)
