@@ -1,4 +1,6 @@
-# Copyright 2014-2015 Canonical Limited.
+#!/usr/bin/env python
+#
+# Copyright 2016 Canonical Ltd
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,3 +13,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+"""Amulet tests on a basic heat deployment on disco-stein."""
+
+from basic_deployment import HeatBasicDeployment
+
+if __name__ == '__main__':
+    deployment = HeatBasicDeployment(series='disco')
+    deployment.run_tests()

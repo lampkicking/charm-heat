@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 repo: https://github.com/juju/charm-helpers@stable/18.11
+=======
+repo: https://github.com/juju/charm-helpers@stable/19.04
+>>>>>>> 83b875bc0e1696e6109981b6832a655059825126
 destination: hooks/charmhelpers
 include:
     - core
@@ -6,7 +10,7 @@ include:
     - cli
     - fetch
     - contrib.openstack|inc=*
-    - contrib.python.packages
+    - contrib.python
     - contrib.storage
     - contrib.network.ip
     - contrib.hahelpers:

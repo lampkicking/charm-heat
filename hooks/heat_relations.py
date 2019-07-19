@@ -52,13 +52,9 @@ from charmhelpers.fetch import (
 
 from charmhelpers.contrib.hahelpers.cluster import (
     is_elected_leader,
-    get_hacluster_config,
 )
 
 from charmhelpers.contrib.network.ip import (
-    get_iface_for_address,
-    get_netmask_for_address,
-    is_ipv6,
     get_relation_ip,
 )
 
@@ -71,7 +67,7 @@ from charmhelpers.contrib.openstack.utils import (
 )
 
 from charmhelpers.contrib.openstack.ha.utils import (
-    update_dns_ha_resource_params,
+    generate_ha_relation_data,
 )
 
 from charmhelpers.contrib.openstack.ip import (
@@ -357,6 +353,7 @@ def cluster_changed():
 
 @hooks.hook('ha-relation-joined')
 def ha_joined(relation_id=None):
+<<<<<<< HEAD
     cluster_config = get_hacluster_config()
 
     resources = {
@@ -424,6 +421,10 @@ def ha_joined(relation_id=None):
                  resources=resources,
                  resource_params=resource_params,
                  clones=clones)
+=======
+    settings = generate_ha_relation_data('heat')
+    relation_set(relation_id=relation_id, **settings)
+>>>>>>> 83b875bc0e1696e6109981b6832a655059825126
 
 
 @hooks.hook('ha-relation-changed')

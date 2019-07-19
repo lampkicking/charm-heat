@@ -14,21 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-<<<<<<< HEAD
 <<<<<<< HEAD:tests/gate-basic-bionic-rocky
 """Amulet tests on a basic heat deployment on bionic-rocky."""
 =======
 """Amulet tests on a basic heat deployment on bionic-stein."""
 >>>>>>> 83b875bc0e1696e6109981b6832a655059825126:tests/gate-basic-bionic-stein
-=======
-"""Amulet tests on a basic heat deployment on bionic-rocky."""
->>>>>>> 83b875bc0e1696e6109981b6832a655059825126
 
 from basic_deployment import HeatBasicDeployment
 
 if __name__ == '__main__':
     deployment = HeatBasicDeployment(series='bionic',
-<<<<<<< HEAD
 <<<<<<< HEAD:tests/gate-basic-bionic-rocky
                                      openstack='cloud:bionic-rocky',
                                      source='cloud:bionic-updates/rocky')
@@ -36,8 +31,4 @@ if __name__ == '__main__':
                                      openstack='cloud:bionic-stein',
                                      source='cloud:bionic-stein')
 >>>>>>> 83b875bc0e1696e6109981b6832a655059825126:tests/gate-basic-bionic-stein
-=======
-                                     openstack='cloud:bionic-rocky',
-                                     source='cloud:bionic-updates/rocky')
->>>>>>> 83b875bc0e1696e6109981b6832a655059825126
     deployment.run_tests()
